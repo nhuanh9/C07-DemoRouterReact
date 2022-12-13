@@ -4,8 +4,8 @@ import {Route, Routes} from "react-router-dom";
 import Login from "./page/Login";
 import Admin from "./page/Admin";
 import User from "./page/User";
-import ListUser from "./page/ListUser";
-import AddUser from "./page/AddUser";
+import ListStudent from "./page/ListStudent";
+import AddStudent from "./page/AddStudent";
 
 function App() {
     return (
@@ -14,8 +14,8 @@ function App() {
                 <Route path={''} element={<Login/>}></Route>
                 <Route path={'admin'} element={<Admin/>}></Route>
                 <Route path={'user'} element={<User/>}>
-                    <Route path={''} element={<ListUser/>}></Route>
-                    <Route path={'add'} element={<AddUser/>}></Route>
+                    <Route path={''} element={<ListStudent/>}></Route>
+                    <Route path={'add'} element={<AddStudent/>}></Route>
                 </Route>
             </Routes>
         </div>
