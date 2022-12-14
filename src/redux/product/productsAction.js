@@ -1,3 +1,4 @@
 export const addProductAction = (data) => {
-    return {type: 'addProduct', payload: data}
+    return {type: 'products/add', payload: data}
 }
+

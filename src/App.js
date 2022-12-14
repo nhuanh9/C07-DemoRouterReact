@@ -4,24 +4,22 @@ import {useDispatch, useSelector} from "react-redux";
 import {useState} from "react";
 import {action, actionCreator} from "./redux/globalStore";
 import {Field, Form, Formik} from "formik";
+import {addProductAction} from "./redux/product/productsAction";
 
 function App() {
-    const dispatch = useDispatch();
-    const data = useSelector(state => {
-        return state.listProduct
+    const listProduct = useSelector(state => {
+        console.log(state)
+        return state.products
     })
+    const dispatch = useDispatch();
     return (
         <>
-            {data.map((item) => (
-                <h2>{item.id}: {item.name}</h2>
+            {listProduct.map(item => (
+                <h1>{item.id}: {item.name}</h1>
             ))}
             <Formik initialValues={{
-                id: '',
-                name: ''
             }} onSubmit={(values) => {
-                dispatch({
-                    type: 'ADD', data: values
-                })
+                dispatch(addProductAction(values))
             }}>
                 <Form>
                     <Field name={'id'}></Field>
